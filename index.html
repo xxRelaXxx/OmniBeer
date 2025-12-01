@@ -87,7 +87,7 @@
             scroll-snap-align: start;
             scroll-snap-stop: always;
             position: relative;
-            overflow: visible;
+            overflow: hidden;
         }
 
         .slide-content {
@@ -99,14 +99,17 @@
             flex-direction: column;
             padding: clamp(2rem, 5vw, 4rem);
             animation: slideIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-            overflow-y: auto;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
-        /* On desktop, prevent internal scrolling */
-        @media (min-width: 1025px) {
+        /* On mobile, allow internal scrolling */
+        @media (max-width: 1024px) {
             .slide-content {
-                overflow: hidden;
+                align-items: flex-start;
+                justify-content: flex-start;
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding-top: clamp(1.5rem, 3vw, 2.5rem);
             }
         }
 
@@ -1228,55 +1231,6 @@
 
         // Scroll event listener
         scrollContainer.addEventListener('scroll', updateSlideIndicators, { passive: true });
-
-        // Handle scroll behavior for mobile to prevent premature snap scrolling
-        let isScrollingSlideContent = false;
-        
-        scrollContainer.addEventListener('wheel', (e) => {
-            const slides = document.querySelectorAll('.slide-content');
-            const scrollTop = scrollContainer.scrollTop;
-            const containerHeight = scrollContainer.clientHeight;
-            const scrollCenter = scrollTop + containerHeight / 2;
-            
-            // Find current slide
-            let currentSlideElement = null;
-            slides.forEach(slide => {
-                const slideTop = slide.parentElement.offsetTop;
-                const slideHeight = slide.parentElement.offsetHeight;
-                if (scrollCenter >= slideTop && scrollCenter < slideTop + slideHeight) {
-                    currentSlideElement = slide;
-                }
-            });
-            
-            // If current slide has scrollable content, prevent container scroll
-            if (currentSlideElement && window.innerWidth <= 1024) {
-                const hasScroll = currentSlideElement.scrollHeight > currentSlideElement.clientHeight;
-                if (hasScroll) {
-                    const isAtBottom = Math.abs(
-                        currentSlideElement.scrollHeight - 
-                        currentSlideElement.clientHeight - 
-                        currentSlideElement.scrollTop
-                    ) < 10;
-                    
-                    const isAtTop = currentSlideElement.scrollTop < 10;
-                    
-                    // Only allow container scroll if at top (scrolling up) or at bottom (scrolling down)
-                    if ((e.deltaY > 0 && !isAtBottom) || (e.deltaY < 0 && !isAtTop)) {
-                        e.preventDefault();
-                    }
-                }
-            }
-        }, { passive: false });
-
-        // Handle touch scroll similarly
-        let touchScrolling = false;
-        scrollContainer.addEventListener('touchstart', (e) => {
-            touchScrolling = true;
-        }, { passive: true });
-
-        scrollContainer.addEventListener('touchend', (e) => {
-            touchScrolling = false;
-        }, { passive: true });
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {

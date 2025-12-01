@@ -90,6 +90,15 @@
             overflow: hidden;
         }
 
+        /* Allow internal scrolling on mobile slides */
+        @media (max-width: 1024px) {
+            .slide {
+                overflow-y: auto;
+                overflow-x: hidden;
+                align-items: flex-start;
+            }
+        }
+
         .slide-content {
             width: 100%;
             height: 100%;
@@ -1319,7 +1328,6 @@
         // Detect mobile device and optimize performance
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         const isPortrait = window.innerHeight > window.innerWidth;
-        const isTablet = window.innerWidth <= 1024;
 
         // Add mobile class to body for CSS hooks
         if (isMobile) {
@@ -1332,17 +1340,6 @@
                     el.style.animationDuration = '0.1s';
                 });
             }
-        }
-
-        // Disable snap scrolling on mobile/tablet (keep animations)
-        if (isTablet) {
-            scrollContainer.style.scrollSnapType = 'none';
-            document.querySelectorAll('.slide').forEach(slide => {
-                slide.style.scrollSnapAlign = 'none';
-                slide.style.scrollSnapStop = 'unset';
-                slide.style.height = 'auto';
-                slide.style.minHeight = 'auto';
-            });
         }
 
         // Handle device orientation changes

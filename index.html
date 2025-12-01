@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no, maximum-scale=1, minimum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="OmniBirra">
+    <meta name="theme-color" content="#0f1419">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>OmniBirra - Presentazione</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0f1419;
+            color: #1a1f2e;
+        }
+
+        /* Main scrollable container */
+        .scroll-container {
+            width: 100%;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(212, 175, 55, 0.5) transparent;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.6);
+            border-radius: 5px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(212, 175, 55, 0.9);
+        }
+
+        /* Slides */
+        .slide {
+            width: 100%;
+            height: 100vh;
+            min-height: 100vh;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: clamp(2rem, 5vw, 4rem);
+            animation: slideIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Color Palette - Premium Beer Brand */
+        /* Primary: Deep Gold/Amber #D4AF37 */
+        /* Secondary: Deep Forest Green #1a472a */
+        /* Accent: Rich Brown #6B4423 */
+        /* Light: Cream #F5F1E8 */
+        /* Dark: Navy #0f1419 */
+
+        .slide-1 {
+            background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #1a3a2e 100%);
+            color: white;
+        }
+
+        .slide-2 {
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-3 {
+            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-4 {
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-5 {
+            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-6 {
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-7 {
+            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-8 {
+            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-9 {
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-10 {
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-11 {
+            background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #1a3a2e 100%);
+            color: white;
+        }
+
+        .slide-9-old {
+            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-10-old {
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-11-old {
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-12-old {
+            background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #1a3a2e 100%);
+            color: white;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 600;
+            letter-spacing: -0.005em;
+        }
+
+        p, li {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.7;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        strong {
+            font-weight: 700;
+            color: #D4AF37;
+        }
+
+        /* Accent Colors */
+        .text-gold {
+            color: #D4AF37;
+        }
+
+        .text-forest {
+            color: #1a472a;
+        }
+
+        .bg-gold {
+            background-color: #D4AF37;
+        }
+
+        .border-gold {
+            border-color: #D4AF37;
+        }
+
+        /* Images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            animation: imageFloat 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes imageFloat {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Fluid Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse-gold {
+            0%, 100% {
+                text-shadow: 0 0 0 transparent;
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                box-shadow: 0 20px 80px rgba(212, 175, 55, 0.15);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes slideDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .animate-fade-in-right {
+            animation: fadeInRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .animate-pulse-gold {
+            animation: pulse-gold 3s ease-in-out infinite;
+        }
+
+        .animate-glow {
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .animate-slide-down {
+            animation: slideDown 2s ease-in-out infinite;
+        }
+
+        /* Stagger animations */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+
+        /* Layout Variants */
+        .layout-title {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .layout-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .layout-three-col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.5rem, 4vw, 3rem);
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        @media (max-width: 1024px) {
+            .layout-two-col {
+                grid-template-columns: 1fr;
+                gap: clamp(1.5rem, 3vw, 2.5rem);
+            }
+            
+            .layout-three-col {
+                grid-template-columns: 1fr;
+                gap: clamp(1rem, 3vw, 2rem);
+            }
+        }
+
+        /* Mobile Device Optimizations */
+        @media (max-width: 768px) {
+            /* Adjust slide height for mobile notches */
+            .slide {
+                height: 100dvh;
+                min-height: 100dvh;
+            }
+
+            .scroll-container {
+                height: 100dvh;
+            }
+
+            /* Better mobile typography */
+            h1 {
+                font-size: clamp(1.75rem, 6vw, 2.5rem);
+                margin-bottom: 1rem;
+            }
+
+            h2 {
+                font-size: clamp(1.25rem, 4vw, 2rem);
+                margin-bottom: 1rem;
+            }
+
+            h3 {
+                font-size: clamp(1rem, 3vw, 1.5rem);
+            }
+
+            p, li {
+                font-size: clamp(0.875rem, 2vw, 1.125rem);
+                line-height: 1.6;
+            }
+
+            /* Reduce padding on mobile */
+            .slide-content {
+                padding: clamp(1.5rem, 4vw, 2.5rem);
+            }
+
+            /* Better image sizes on mobile */
+            img {
+                max-height: 50vh;
+                border-radius: 0.75rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            }
+
+            /* Adjust list styling for mobile */
+            li {
+                margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+            }
+
+            li:before {
+                margin-right: 0.75rem;
+                min-width: 1rem;
+                font-size: 1.25em;
+            }
+
+            /* Mobile-friendly counter */
+            .slide-counter {
+                padding: 0.625rem 1rem;
+                font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+                bottom: max(1.5rem, calc(0.75rem + env(safe-area-inset-bottom)));
+                right: max(1.5rem, calc(0.75rem + env(safe-area-inset-right)));
+                border: 1.5px solid #D4AF37;
+            }
+
+            /* Hide scroll hint on very small screens */
+            .scroll-hint {
+                bottom: max(5rem, calc(3rem + env(safe-area-inset-bottom)));
+                right: max(1.5rem, calc(0.75rem + env(safe-area-inset-right)));
+                font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+            }
+
+            /* Better modal for mobile */
+            .image-modal-content {
+                max-width: 95vw;
+                max-height: 85vh;
+            }
+
+            .image-modal img {
+                max-height: 80vh;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            }
+
+            .image-modal-close {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+
+            /* Improve layout grids for mobile */
+            .layout-two-col {
+                gap: clamp(1rem, 2vw, 1.5rem);
+            }
+
+            .layout-three-col {
+                gap: clamp(0.75rem, 2vw, 1rem);
+            }
+
+            /* Better spacing for mobile content */
+            .max-w-3xl, .max-w-4xl {
+                padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+            }
+
+            /* Prevent text selection issues on mobile */
+            button, .slide-counter {
+                -webkit-user-select: none;
+                user-select: none;
+                -webkit-touch-callout: none;
+            }
+
+            /* Optimize animations for mobile */
+            @media (prefers-reduced-motion: reduce) {
+                * {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                }
+            }
+        }
+
+        /* Extra small devices (phones < 480px) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: clamp(1.5rem, 5.5vw, 2.2rem);
+            }
+
+            h2 {
+                font-size: clamp(1.1rem, 3.5vw, 1.8rem);
+            }
+
+            p, li {
+                font-size: clamp(0.8rem, 1.8vw, 1rem);
+            }
+
+            .slide-content {
+                padding: clamp(1rem, 3vw, 2rem);
+            }
+
+            img {
+                max-height: 45vh;
+            }
+
+            /* Stack all grid layouts on tiny screens */
+            .layout-two-col,
+            .layout-three-col {
+                grid-template-columns: 1fr;
+                gap: clamp(0.75rem, 2vw, 1rem);
+            }
+
+            li:before {
+                margin-right: 0.5rem;
+                min-width: 0.75rem;
+                font-size: 1rem;
+            }
+
+            .slide-counter {
+                padding: 0.5rem 0.875rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Tablet optimizations (768px - 1024px) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .slide-content {
+                padding: clamp(2rem, 5vw, 3rem);
+            }
+
+            h1 {
+                font-size: clamp(2rem, 6vw, 3rem);
+            }
+
+            h2 {
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
+            }
+
+            img {
+                max-height: 55vh;
+            }
+        }
+
+        /* Landscape mode optimizations */
+        @media (orientation: landscape) and (max-height: 600px) {
+            .slide {
+                min-height: auto;
+            }
+
+            .slide-content {
+                padding: clamp(1rem, 3vh, 2rem);
+            }
+
+            h1 {
+                font-size: clamp(1.5rem, 5vh, 2.5rem);
+                margin-bottom: 0.5rem;
+            }
+
+            h2 {
+                font-size: clamp(1.1rem, 3.5vh, 1.75rem);
+                margin-bottom: 0.5rem;
+            }
+
+            img {
+                max-height: 65vh;
+            }
+
+            .scroll-hint,
+            .slide-counter {
+                animation: none;
+            }
+        }
+
+        /* iOS specific fixes */
+        @supports (padding: max(0px)) {
+            body {
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+            }
+        }
+
+        /* Prevent zoom on iOS input focus */
+        input[type="text"],
+        input[type="email"],
+        button,
+        select {
+            font-size: 16px;
+        }
+
+        /* Fix scrollbar visibility on all mobile browsers */
+        .scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.5);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .scroll-container::-webkit-scrollbar {
+                width: 6px;
+            }
+        }
+
+        /* Smooth tap feedback on mobile */
+        .slide-image,
+        button,
+        .image-modal-close {
+            -webkit-tap-highlight-color: rgba(212, 175, 55, 0.2);
+            tap-highlight-color: rgba(212, 175, 55, 0.2);
+        }
+
+        /* Prevent bounce scrolling on iOS */
+        html, body {
+            overscroll-behavior: none;
+        }
+
+        /* Better focus states for keyboard navigation */
+        button:focus-visible,
+        .image-modal-close:focus-visible {
+            outline: 2px solid #D4AF37;
+            outline-offset: 2px;
+        }
+
+        /* Navigation Elements */
+        .nav-container {
+            position: fixed;
+            z-index: 50;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            background: rgba(15, 20, 25, 0.7);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D4AF37 0%, #1a472a 100%);
+            z-index: 60;
+            transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: max(2rem, calc(1rem + env(safe-area-inset-bottom)));
+            right: max(2rem, calc(1rem + env(safe-area-inset-right)));
+            background: rgba(26, 71, 42, 0.85);
+            color: #D4AF37;
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            border: 2px solid #D4AF37;
+            backdrop-filter: blur(10px);
+            z-index: 50;
+            font-weight: 600;
+            animation: slideDown 2s ease-in-out infinite;
+        }
+
+        .scroll-hint {
+            position: fixed;
+            bottom: max(6rem, calc(4rem + env(safe-area-inset-bottom)));
+            right: max(2rem, calc(1rem + env(safe-area-inset-right)));
+            color: #D4AF37;
+            font-size: clamp(0.75rem, 2vw, 0.95rem);
+            font-weight: 600;
+            z-index: 50;
+            animation: slideDown 1.5s ease-in-out infinite;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .scroll-hint.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* List Styling */
+        ul, ol {
+            list-style: none;
+        }
+
+        li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        li:before {
+            content: "▸";
+            color: #D4AF37;
+            font-weight: bold;
+            margin-right: 1.25rem;
+            min-width: 1.5rem;
+            font-size: 1.5em;
+            line-height: 1;
+        }
+
+        /* Button styles (if needed) */
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background: #D4AF37;
+            color: #1a472a;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid #D4AF37;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #D4AF37;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Content containers */
+        .content-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .image-col {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Safe area support */
+        .safe-area-right {
+            padding-right: max(1rem, env(safe-area-inset-right));
+        }
+
+        .safe-area-bottom {
+            padding-bottom: max(1rem, env(safe-area-inset-bottom));
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Loading state */
+        .loading {
+            opacity: 0;
+        }
+
+        .loaded {
+            opacity: 1;
+        }
+
+        /* Fullscreen Image Modal */
+        .image-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 20, 25, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(5px);
+        }
+
+        .image-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .image-modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            animation: modalZoomIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes modalZoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .image-modal img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 1rem;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+            animation: none;
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid #D4AF37;
+            color: #D4AF37;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-weight: bold;
+        }
+
+        .image-modal-close:hover {
+            background: #D4AF37;
+            color: #1a472a;
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        /* Make images clickable */
+        .slide-image {
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .slide-image:hover {
+            transform: scale(1.02);
+            filter: brightness(1.05);
+            box-shadow: 0 20px 80px rgba(212, 175, 55, 0.2) !important;
+        }
+
+        .slide-image:active {
+            transform: scale(0.98);
+        }
+
+        /* Disable scroll when modal is open */
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        .scroll-container.modal-open {
+            overflow: hidden;
+        }
+
+        /* Mobile adjustments for modal */
+        @media (max-width: 768px) {
+            .image-modal-close {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fullscreen Image Modal -->
+    <div class="image-modal" id="imageModal">
+        <div class="image-modal-content">
+            <img id="modalImage" src="" alt="Fullscreen Image">
+            <button class="image-modal-close" id="modalClose">✕</button>
+        </div>
+    </div>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="scroll-hint" id="scrollHint">↓ Scorri per continuare</div>
+    <div class="slide-counter"><span id="slideNumber">1</span> / 13</div>
+
+    <div class="scroll-container" id="scrollContainer">
+        <!-- SLIDE 1: Titolo & Visione -->
+        <section class="slide slide-1">
+            <div class="slide-content layout-title">
+                <h1 class="text-gold animate-fade-in-up stagger-1">OmniBirra</h1>
+                <h2 class="text-white animate-fade-in-up stagger-2" style="margin-top: 1rem;">La Birra di Tutti i Gusti</h2>
+                <div class="animate-fade-in-up stagger-3" style="margin: 2rem 0;">
+                    <img src="img/slide1/slide1-brand.png" alt="OmniBirra Brand" class="animate-glow slide-image" style="max-height: 300px;">
+                </div>
+                <div class="max-w-3xl mx-auto animate-fade-in-up stagger-4">
+                    <p class="text-white text-opacity-95">Siamo il primo birrificio certificato dedicato alle birre multi-gusto, con un metodo di aromatizzazione scientifico, stabile e scalabile.</p>
+                    <p class="text-white text-opacity-95 font-semibold mt-6">La nostra missione: trasformare la birra da prodotto tradizionale a esperienza di gusto illimitata.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: Il Problema & L'Opportunità -->
+        <section class="slide slide-2">
+            <div class="slide-content">
+                <div class="layout-two-col">
+                    <div class="content-col animate-fade-in-left">
+                        <h2 class="text-forest mb-8">Perché OmniBirra?</h2>
+                        <ul class="space-y-4">
+                            <li class="animate-fade-in-up stagger-1">Il consumatore moderno cerca varietà, novità e sapori complessi.</li>
+                            <li class="animate-fade-in-up stagger-2">Il mercato della birra artigianale cresce, ma l'innovazione aromatica è improvvisata e instabile.</li>
+                            <li class="animate-fade-in-up stagger-3">Noi rispondiamo con un metodo certificato che rende la creatività totalmente controllabile.</li>
+                        </ul>
+                        <p class="text-forest font-semibold mt-8 pt-8 border-t-2 border-gold"><strong>L'Idea:</strong> Offriamo una birra che combina varietà creativa e qualità scientifica, impossibile da ottenere con i metodi artigianali tradizionali.</p>
+                        <p class="text-forest mt-4"><strong>Per il consumatore:</strong> più gusto, più stabilità, più possibilità di scelta.</p>
+                    </div>
+                    <div class="image-col animate-fade-in-right">
+                        <div class="flex flex-col gap-6">
+                            <img src="img/slide2/trend-mercato-birra.png" alt="Trend Mercato Birra" class="slide-image" style="max-height: 280px;">
+                            <img src="img/slide2/people-having-fun.png" alt="People Having Fun" class="slide-image" style="max-height: 280px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: La Proposta di Valore -->
+        <section class="slide slide-3">
+            <div class="slide-content layout-title">
+                <h2 class="text-forest animate-fade-in-up stagger-1">Cosa ci rende unici</h2>
+                <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
+                    <p class="text-forest">Un brand interamente costruito sulla <strong>diversità dei gusti</strong> e sulla <strong>ripetibilità scientifica</strong>.</p>
+                    <p class="text-forest mt-6">Il nostro punto di forza: <strong>Metodo Unico Certificato OmniBirra</strong>, che garantisce stabilità, purezza e intensità aromatica anche nelle miscele più complesse.</p>
+                    <p class="text-forest font-semibold mt-8 pt-8 border-t-2 border-gold"><strong>Obiettivo aziendale:</strong> Diventare il riferimento europeo per la birra aromatizzata certificata, creando un modello scalabile e capace di entrare nei canali horeca, retail e distribuzione premium.</p>
+                </div>
+                <img src="img/slide3/punti-di-forza.png" alt="Punti di Forza" class="animate-fade-in-up stagger-3 slide-image" style="max-height: 350px;">
+            </div>
+        </section>
+
+        <!-- SLIDE 4: Le Nostre Linee di Prodotto -->
+        <section class="slide slide-4">
+            <div class="slide-content layout-title">
+                <h2 class="text-forest animate-fade-in-up stagger-1">Portafoglio OmniBirra</h2>
+                <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
+                    <p class="text-forest"><strong>1. L'Essenziale</strong> – Chiara e Scura. Qualità fondamentale, volumi stabili.</p>
+                    <p class="text-forest mt-4"><strong>2. Le Armonie</strong> – Gusti stabili: agrumi, frutti di bosco, botanici.</p>
+                    <p class="text-forest mt-4"><strong>3. I Capricci del Mastro</strong> – Edizioni limitate, sperimentali, stagionali. Generano hype e fidelizzazione.</p>
+                </div>
+                <div class="layout-three-col animate-fade-in-up stagger-3">
+                    <div class="flex flex-col items-center gap-4">
+                        <img src="img/slide4/beer-line-1.png" alt="L'Essenziale" class="slide-image" style="max-height: 250px;">
+                        <h3 class="text-forest">L'Essenziale</h3>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <img src="img/slide4/beer-line-2.png" alt="Le Armonie" class="slide-image" style="max-height: 250px;">
+                        <h3 class="text-forest">Le Armonie</h3>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                        <img src="img/slide4/beer-line-3.png" alt="I Capricci" class="slide-image" style="max-height: 250px;">
+                        <h3 class="text-forest">I Capricci</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: Come Funziona il Metodo Unico -->
+        <section class="slide slide-5">
+            <div class="slide-content">
+                <div class="layout-two-col">
+                    <div class="content-col animate-fade-in-left">
+                        <h2 class="text-forest mb-8">Metodo Unico<br>Certificato OmniBirra</h2>
+                        <p class="text-forest font-semibold mb-6">Estende il processo classico con tre passaggi proprietari:</p>
+                        <ul class="space-y-4">
+                            <li class="animate-fade-in-up stagger-1"><strong>Infusioni a caldo</strong> – Spezie e radici, estrazione aromatica massima.</li>
+                            <li class="animate-fade-in-up stagger-2"><strong>Infusioni a freddo controllate</strong> – Frutta e puree, equilibrio con gli esteri della fermentazione.</li>
+                            <li class="animate-fade-in-up stagger-3"><strong>Miscelazione finale & micro-filtraggio</strong> – Controllo millimetrico degli aromi volatili.</li>
+                        </ul>
+                        <p class="text-forest font-semibold mt-8 pt-6 border-t-2 border-gold">Il processo integra attività standard (maltazione, ammostamento, bollitura, fermentazione) con tre fasi proprietarie di aromatizzazione, seguite da micro-filtrazione, maturazione, imbottigliamento e test di qualità per ogni lotto.</p>
+                        <p class="text-forest font-bold mt-4">Garantiamo: stabilità, sicurezza, ripetibilità.</p>
+                    </div>
+                    <div class="image-col animate-fade-in-right">
+                        <div class="flex flex-col gap-6">
+                            <img src="img/slide5/metodo-unico-3step.png" alt="3 Step" class="slide-image" style="max-height: 280px;">
+                            <img src="img/slide5/metodo-unico-tecnical.png" alt="Technical" class="slide-image" style="max-height: 280px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Approvvigionamento & Qualità -->
+        <section class="slide slide-6">
+            <div class="slide-content">
+                <div class="layout-two-col">
+                    <div class="image-col animate-fade-in-left">
+                        <img src="img/slide6/approvvigionamento-organico.png" alt="Approvvigionamento Organico" class="slide-image" style="max-height: 400px;">
+                    </div>
+                    <div class="content-col animate-fade-in-right">
+                        <h2 class="text-forest mb-8">Approvvigionamento<br>Organico Controllato</h2>
+                        <ul class="space-y-4">
+                            <li class="animate-fade-in-up stagger-1">Ingredienti selezionati in base alla loro termostabilità e certificazioni UE.</li>
+                            <li class="animate-fade-in-up stagger-2">Contratti con fornitori premium.</li>
+                            <li class="animate-fade-in-up stagger-3">Ogni lotto è testato e certificato da un ente esterno.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: Strategia di Marketing -->
+        <section class="slide slide-7">
+            <div class="slide-content layout-title">
+                <h2 class="text-forest animate-fade-in-up stagger-1">Marketing & Community</h2>
+                <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
+                    <p class="text-forest font-semibold mb-6"><strong>Clienti Principali:</strong></p>
+                    <ul class="space-y-2 inline-block text-left mb-8">
+                        <li class="animate-fade-in-up stagger-1">Consumatori: amanti delle craft beer e dei gusti speciali.</li>
+                        <li class="animate-fade-in-up stagger-2">Locali, pub, beer shop, festival e negozi gourmet.</li>
+                    </ul>
+                    <p class="text-forest font-semibold border-t-2 border-gold pt-6 mt-6"><strong>Canali di distribuzione:</strong> horeca locale, e-commerce diretto, distribuzioni regionali e collaborazioni con catene selezionate.</p>
+                    <p class="text-forest font-semibold mt-6"><strong>Strategie di engagement:</strong></p>
+                    <ul class="space-y-2 inline-block text-left">
+                        <li>Community globale attiva su Instagram, TikTok e Reddit.</li>
+                        <li>Innovazione aperta: i consumatori suggeriscono nuovi gusti.</li>
+                        <li>Eventi, food pairing non convenzionale, collaborazioni.</li>
+                    </ul>
+                    <p class="text-forest font-bold text-xl mt-8">Obiettivo: trasformare i clienti in co-creatori.</p>
+                </div>
+                <img src="img/slide7/marketing-socials.png" alt="Marketing Socials" class="animate-fade-in-up stagger-3 slide-image" style="max-height: 300px;">
+            </div>
+        </section>
+
+        <!-- SLIDE 8 BIS: Competenze Necessarie -->
+        <section class="slide slide-8">
+            <div class="slide-content layout-title">
+                <h2 class="text-forest animate-fade-in-up stagger-1">Competenze Chiave del Team</h2>
+                <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
+                    <ul class="space-y-4 inline-block text-left">
+                        <li class="animate-fade-in-up stagger-1"><strong>Mastro birraio certificato</strong> con esperienza in aromatizzazioni multi-fase.</li>
+                        <li class="animate-fade-in-up stagger-2"><strong>Tecnologo alimentare</strong> per certificazioni, micro-filtrazione e stabilità gusto.</li>
+                        <li class="animate-fade-in-up stagger-3"><strong>Team marketing</strong> orientato ai social e alla community.</li>
+                        <li class="animate-fade-in-up stagger-4"><strong>Competenze tecniche</strong> in gestione impianti, produzione e controllo qualità.</li>
+                    </ul>
+                </div>
+                <div class="text-4xl space-x-8 flex justify-center mt-8 animate-fade-in-up stagger-3">
+                    <span class="text-gold">⚙️</span>
+                    <span class="text-gold">✓</span>
+                    <span class="text-gold">🧪</span>
+                    <span class="text-gold">📢</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8 TER: Risorse Necessarie -->
+        <section class="slide slide-9">
+            <div class="slide-content layout-title">
+                <h2 class="text-forest animate-fade-in-up stagger-1">Risorse e Infrastruttura</h2>
+                <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
+                    <ul class="space-y-4 inline-block text-left">
+                        <li class="animate-fade-in-up stagger-1"><strong>Risorse economiche:</strong> investimento iniziale €180.000.</li>
+                        <li class="animate-fade-in-up stagger-2"><strong>Persone:</strong> 4 ruoli chiave (Mastro birraio, assistente, sales/marketing, founder).</li>
+                        <li class="animate-fade-in-up stagger-3"><strong>Attrezzature:</strong> brewhouse, fermentatori, linea semi-automatica, sistema micro-filtraggio.</li>
+                        <li class="animate-fade-in-up stagger-4"><strong>Materie prime:</strong> malti selezionati, frutta certificata, aromi botanici premium.</li>
+                        <li class="animate-fade-in-up stagger-5"><strong>Spazio:</strong> struttura da 200–300 mq.</li>
+                    </ul>
+                </div>
+                <div class="text-4xl space-x-8 flex justify-center mt-8 animate-fade-in-up stagger-3">
+                    <span class="text-gold">💰</span>
+                    <span class="text-gold">👥</span>
+                    <span class="text-gold">🏭</span>
+                    <span class="text-gold">🌾</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: Roadmap di Crescita -->
+        <section class="slide slide-9-old">
+            <div class="slide-content layout-title">
+                <h2 class="text-forest animate-fade-in-up stagger-1">Visione 0–5 Anni</h2>
+                <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
+                    <p class="text-forest"><strong>0–12 mesi:</strong> Produzione iniziale, certificazione UE, vendite locali.</p>
+                    <p class="text-forest mt-4"><strong>1–3 anni:</strong> Espansione nazionale, crescita della serie Capricci.</p>
+                    <p class="text-forest mt-4"><strong>3–5 anni:</strong> Ingresso nei mercati UE e lancio della linea analcolica L'Alternativa.</p>
+                </div>
+                <img src="img/slide8/piano-primi-anni.png" alt="Piano Primi Anni" class="animate-fade-in-up stagger-3 slide-image" style="max-height: 350px;">
+            </div>
+        </section>
+
+        <!-- SLIDE 10: Proiezioni Economiche -->
+        <section class="slide slide-10-old">
+            <div class="slide-content layout-title">
+                <h2 class="text-forest animate-fade-in-up stagger-1">Numeri Chiave del Primo Anno</h2>
+                <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
+                    <ul class="space-y-3 inline-block text-left text-forest font-semibold">
+                        <li>Capacità: <strong>800 hL / 80.000 L</strong></li>
+                        <li>Ricavi Totali: <strong>€600.000</strong></li>
+                        <li>Margine Lordo: <strong>73,1%</strong></li>
+                        <li>EBITDA: <strong>€175.000</strong></li>
+                        <li>Utile Pre-Tasse: <strong>€139.000</strong></li>
+                    </ul>
+                </div>
+                <img src="img/slide9/proiezione-finanziaria.png" alt="Proiezione Finanziaria" class="animate-fade-in-up stagger-3 slide-image" style="max-height: 300px;">
+            </div>
+        </section>
+
+        <!-- SLIDE 11: Richiesta di Investimento -->
+        <section class="slide slide-11-old">
+            <div class="slide-content layout-title">
+                <h2 class="text-forest animate-fade-in-up stagger-1">Investire in OmniBirra</h2>
+                <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
+                    <p class="text-forest"><strong>Richiesta di capitale: €180.000</strong> per coprire il CAPEX iniziale e il capitale circolante.</p>
+                    <p class="text-forest mt-6">Modello ad alto margine e rischio di produzione ridotto grazie alla certificazione UE.</p>
+                    <p class="text-forest font-semibold mt-8 pt-6 border-t-2 border-gold"><strong>Struttura snella:</strong></p>
+                    <ul class="space-y-2 inline-block text-left mt-4">
+                        <li>CEO/Founder – gestione operativa e strategica</li>
+                        <li>Mastro Birraio – produzione e R&S</li>
+                        <li>Assistente di Produzione – logistica e impianto</li>
+                        <li>Sales/Marketing – community, vendite e B2B</li>
+                    </ul>
+                    <p class="text-forest font-semibold mt-6">Struttura pensata per scalare rapidamente con l'aumento dei volumi.</p>
+                </div>
+                <img src="img/slide10/richiesta-capitale.png" alt="Richiesta Capitale" class="animate-fade-in-up stagger-3 slide-image" style="max-height: 300px;">
+            </div>
+        </section>
+
+        <!-- SLIDE 12: Chiusura -->
+        <section class="slide slide-12-old">
+            <div class="slide-content layout-title">
+                <h1 class="text-gold animate-fade-in-up stagger-1">Grazie</h1>
+                <h2 class="text-gold animate-fade-in-up stagger-2" style="margin-top: 1rem;">Siamo Pronti a Costruire OmniBirra Insieme</h2>
+                <div class="w-full flex justify-center animate-fade-in-up stagger-3" style="margin: 2rem 0;">
+                    <img src="img/slide11/final.png" alt="OmniBirra" class="slide-image" style="max-height: 400px; object-fit: contain;">
+                </div>
+                <div class="max-w-3xl mx-auto animate-fade-in-up stagger-4">
+                    <p class="text-white text-opacity-95">Siamo disponibili a domande su: processo produttivo, certificazione, strategia, numeri e tempistiche.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Scroll container and slide tracking
+        const scrollContainer = document.getElementById('scrollContainer');
+        const progressBar = document.getElementById('progressBar');
+        const slideNumber = document.getElementById('slideNumber');
+        const scrollHint = document.getElementById('scrollHint');
+        const TOTAL_SLIDES = 13;
+        let currentSlide = 1;
+        let hasScrolled = false;
+
+        // Update slide indicators
+        function updateSlideIndicators() {
+            const slides = document.querySelectorAll('.slide');
+            const containerScrollTop = scrollContainer.scrollTop;
+            const containerHeight = scrollContainer.clientHeight;
+            const scrollCenter = containerScrollTop + containerHeight / 2;
+
+            slides.forEach((slide, index) => {
+                const slideTop = slide.offsetTop;
+                const slideBottom = slideTop + slide.offsetHeight;
+
+                if (scrollCenter >= slideTop && scrollCenter < slideBottom) {
+                    currentSlide = index + 1;
+                }
+            });
+
+            slideNumber.textContent = currentSlide;
+            const progress = (currentSlide / TOTAL_SLIDES) * 100;
+            progressBar.style.width = progress + '%';
+
+            // Hide scroll hint after first scroll
+            if (!hasScrolled && scrollContainer.scrollTop > 0) {
+                scrollHint.classList.add('hidden');
+                hasScrolled = true;
+            }
+        }
+
+        // Scroll event listener
+        scrollContainer.addEventListener('scroll', updateSlideIndicators, { passive: true });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === ' ') {
+                e.preventDefault();
+                scrollContainer.scrollBy({
+                    top: scrollContainer.clientHeight,
+                    behavior: 'smooth'
+                });
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                scrollContainer.scrollBy({
+                    top: -scrollContainer.clientHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        // Touch swipe navigation
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const difference = touchStartY - touchEndY;
+
+            if (Math.abs(difference) > swipeThreshold) {
+                if (difference > 0) {
+                    // Swiped up
+                    scrollContainer.scrollBy({
+                        top: scrollContainer.clientHeight,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Swiped down
+                    scrollContainer.scrollBy({
+                        top: -scrollContainer.clientHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        // Initialize animations on load
+        window.addEventListener('load', () => {
+            updateSlideIndicators();
+            document.querySelectorAll('.slide-content').forEach((content, index) => {
+                content.classList.add('animate-fade-in-up');
+            });
+        });
+
+        // Prevent accidental zoom on touch
+        document.addEventListener('touchmove', function(event) {
+            if (event.scale !== 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+
+        // Enhanced mobile touch handling
+        let lastTouchTime = 0;
+        const doubleTapDelay = 500;
+        let touchStartX = 0;
+        let touchStartTime = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].clientX;
+            touchStartY = e.changedTouches[0].screenY;
+            touchStartTime = Date.now();
+            lastTouchTime = Date.now();
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+            const touchEndTime = Date.now();
+            const touchDuration = touchEndTime - touchStartTime;
+            const touchEndX = e.changedTouches[0].clientX;
+            
+            // Prevent double-tap zoom on iOS
+            if (touchEndTime - lastTouchTime < doubleTapDelay) {
+                e.preventDefault();
+            }
+            
+            // Only handle swipe if it wasn't a long press
+            if (touchDuration < 500) {
+                touchEndY = e.changedTouches[0].screenY;
+                handleSwipe();
+            }
+        }, { passive: true });
+
+        // Detect mobile device and optimize performance
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        const isPortrait = window.innerHeight > window.innerWidth;
+
+        // Add mobile class to body for CSS hooks
+        if (isMobile) {
+            document.body.classList.add('is-mobile');
+            
+            // Optimize animations on low-end mobile devices
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduceMotion) {
+                document.querySelectorAll('[class*="animate-"]').forEach(el => {
+                    el.style.animationDuration = '0.1s';
+                });
+            }
+        }
+
+        // Handle device orientation changes
+        window.addEventListener('orientationchange', () => {
+            updateSlideIndicators();
+            // Small delay to ensure layout has updated
+            setTimeout(() => {
+                const currentSlide = Math.ceil((scrollContainer.scrollTop + scrollContainer.clientHeight / 2) / scrollContainer.clientHeight);
+                scrollContainer.scrollTop = (currentSlide - 1) * scrollContainer.clientHeight;
+            }, 100);
+        });
+
+        // Improve scrollbar visibility on mobile
+        if (isMobile && isPortrait) {
+            scrollContainer.style.scrollbarWidth = 'thin';
+        }
+
+        // ==================== IMAGE MODAL FUNCTIONALITY ====================
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalClose = document.getElementById('modalClose');
+        const slideImages = document.querySelectorAll('.slide-image');
+
+        // Open modal on image click
+        slideImages.forEach(img => {
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+                modalImage.src = img.src;
+                modalImage.alt = img.alt;
+                imageModal.classList.add('active');
+                document.body.classList.add('modal-open');
+                scrollContainer.classList.add('modal-open');
+            });
+        });
+
+        // Close modal on close button click
+        modalClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeModal();
+        });
+
+        // Close modal on modal background click
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                closeModal();
+            }
+        });
+
+        // Close modal on image click (toggling behavior)
+        modalImage.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeModal();
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Close modal function
+        function closeModal() {
+            imageModal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+            scrollContainer.classList.remove('modal-open');
+        }
+
+        // Prevent scroll on modal image
+        modalImage.addEventListener('wheel', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+    </script>
+</body>
+</html>
+        let bottleScene, bottleCamera, bottleRenderer, bottle;
+        let bottleRotationY = 0;
+        let bottleRotationVelocity = 0.01;
+        let isDraggingBottle = false;
+        let bottleDragStart = 0;
+        let bottleAutoRotate = true;
+
+        function initBottle() {
+            const container = document.getElementById('bottleContainer');
+            if (!container) {
+                console.error('Bottle container not found!');
+                return;
+            }
+
+            // Check if already initialized
+            if (bottleRenderer) {
+                console.log('Bottle already initialized');
+                return;
+            }
+
+            console.log('Starting bottle initialization...');
+            console.log('Container element:', container);
+            console.log('Container computed style:', window.getComputedStyle(container));
+
+            try {
+                // Ensure container is visible
+                container.style.display = 'block';
+
+                // Get container dimensions
+                let width = container.offsetWidth || container.clientWidth || 500;
+                let height = container.offsetHeight || container.clientHeight || 500;
+                
+                console.log('Container size:', width, 'x', height);
+
+                if (width === 0 || height === 0) {
+                    console.warn('Invalid container size, using defaults');
+                    width = 500;
+                    height = 500;
+                }
+
+                // Scene setup
+                bottleScene = new THREE.Scene();
+                bottleScene.background = new THREE.Color(0x0f1419);
+                console.log('Scene created');
+
+                // Camera setup
+                bottleCamera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+                bottleCamera.position.z = 5;
+                console.log('Camera created');
+
+                // Renderer setup
+                bottleRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, precision: 'highp' });
+                bottleRenderer.setSize(width, height);
+                bottleRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                bottleRenderer.shadowMap.enabled = true;
+                console.log('Renderer created and configured');
+
+                // Add renderer to DOM
+                container.innerHTML = '';
+                container.appendChild(bottleRenderer.domElement);
+                console.log('Renderer appended to DOM');
+
+                // Lighting
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+                bottleScene.add(ambientLight);
+
+                const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+                directionalLight.position.set(8, 12, 8);
+                directionalLight.castShadow = true;
+                directionalLight.shadow.mapSize.width = 2048;
+                directionalLight.shadow.mapSize.height = 2048;
+                bottleScene.add(directionalLight);
+
+                // Gold accent light - highlights the label and cap
+                const goldLight = new THREE.PointLight(0xFFD700, 0.8);
+                goldLight.position.set(-6, 3, 4);
+                bottleScene.add(goldLight);
+
+                // Rim light for glass effect
+                const rimLight = new THREE.PointLight(0x87CEEB, 0.5);
+                rimLight.position.set(-8, 0, -5);
+                bottleScene.add(rimLight);
+
+                console.log('Lights added');
+
+                // Create beer bottle group with 30-degree tilt
+                bottle = new THREE.Group();
+                bottle.position.set(0, 0, 0);
+                bottle.rotation.z = Math.PI / 6; // 30 degrees tilt
+
+                // === DETAILED BEER BOTTLE GEOMETRY ===
+                
+                // Bottom punt (the indentation at bottom)
+                const puntGeometry = new THREE.CylinderGeometry(0.45, 0.55, 0.2, 32, 8);
+                const bottomMaterial = new THREE.MeshStandardMaterial({
+                    color: 0x1a3a0f,
+                    metalness: 0.4,
+                    roughness: 0.35,
+                });
+                const punt = new THREE.Mesh(puntGeometry, bottomMaterial);
+                punt.position.y = -1.6;
+                punt.castShadow = true;
+                punt.receiveShadow = true;
+                bottle.add(punt);
+
+                // Main body - wider at bottom, narrower at middle, wider at shoulders
+                const bodyShape = new THREE.LatheGeometry([
+                    // Bottom section - punt and base
+                    new THREE.Vector2(0.82, -1.8),   // Outer bottom
+                    new THREE.Vector2(0.45, -1.7),   // Punt indent
+                    new THREE.Vector2(0.48, -1.6),   // Punt transition
+                    
+                    // Lower body - wide and stable
+                    new THREE.Vector2(0.78, -1.4),   // Lower bottom curve
+                    new THREE.Vector2(0.76, -1.0),   // Lower body main
+                    new THREE.Vector2(0.74, -0.5),   // Lower middle
+                    new THREE.Vector2(0.72, 0.0),    // Middle waist
+                    new THREE.Vector2(0.70, 0.4),    // Upper middle
+                    new THREE.Vector2(0.68, 0.7),    // Upper body
+                    
+                    // Shoulders - smooth transition
+                    new THREE.Vector2(0.72, 0.95),   // Shoulder start
+                    new THREE.Vector2(0.80, 1.15),   // Shoulder peak (widest)
+                    new THREE.Vector2(0.78, 1.35),   // Shoulder curve
+                    new THREE.Vector2(0.65, 1.55),   // Neck transition start
+                    new THREE.Vector2(0.55, 1.65),   // Transition middle
+                    new THREE.Vector2(0.42, 1.75),   // Narrow transition
+                    
+                    // Neck - very narrow and elegant
+                    new THREE.Vector2(0.35, 1.9),    // Neck start (much narrower!)
+                    new THREE.Vector2(0.33, 2.2),    // Lower neck
+                    new THREE.Vector2(0.32, 2.5),    // Middle neck
+                    new THREE.Vector2(0.34, 2.75),   // Upper neck slight flare
+                    new THREE.Vector2(0.36, 2.85),   // Neck top
+                    new THREE.Vector2(0.38, 2.95),   // Bottle mouth
+                ], 64); // More segments for smoother curves
+                
+                const bodyMaterial = new THREE.MeshStandardMaterial({
+                    color: 0x2d5016,
+                    metalness: 0.28,
+                    roughness: 0.42,
+                    emissive: 0x0f1a07,
+                    side: THREE.DoubleSide,
+                    wireframe: false,
+                });
+                const body = new THREE.Mesh(bodyShape, bodyMaterial);
+                body.scale.set(1, 1, 1);
+                body.castShadow = true;
+                body.receiveShadow = true;
+                body.userData.castShadow = true;
+                bottle.add(body);
+
+                // Glass thread details on neck (fine grooves)
+                const threadGeometry = new THREE.TorusGeometry(0.345, 0.008, 8, 100);
+                const threadMaterial = new THREE.MeshStandardMaterial({
+                    color: 0x1a2d0f,
+                    metalness: 0.35,
+                    roughness: 0.5,
+                });
+                for (let i = 0; i < 5; i++) {
+                    const thread = new THREE.Mesh(threadGeometry, threadMaterial);
+                    thread.position.y = 1.8 + i * 0.22;
+                    thread.scale.set(1, 0.5, 1);
+                    thread.castShadow = true;
+                    bottle.add(thread);
+                }
+
+                // Bottle rim (top of neck - lip)
+                const rimGeometry = new THREE.LatheGeometry([
+                    new THREE.Vector2(0.38, 0),      // Bottle mouth
+                    new THREE.Vector2(0.42, 0.03),   // Outer lip
+                    new THREE.Vector2(0.44, 0.08),   // Lip peak
+                    new THREE.Vector2(0.40, 0.12),   // Inner curve
+                    new THREE.Vector2(0.36, 0.10),   // Inner lip
+                    new THREE.Vector2(0.35, 0.02),   // Inside mouth
+                ], 32);
+                
+                const rimMaterial = new THREE.MeshStandardMaterial({
+                    color: 0x2d5016,
+                    metalness: 0.40,
+                    roughness: 0.35,
+                });
+                const rim = new THREE.Mesh(rimGeometry, rimMaterial);
+                rim.position.y = 3.0;
+                rim.scale.set(1.1, 1, 1.1);
+                rim.castShadow = true;
+                rim.receiveShadow = true;
+                bottle.add(rim);
+
+                // Cap - crown type (realistic beer bottle cap) - smaller for narrow neck
+                const capGroup = new THREE.Group();
+                capGroup.position.y = 3.25;
+
+                // Cap outer ring - proportional to narrower neck
+                const capTopGeometry = new THREE.CylinderGeometry(0.44, 0.44, 0.10, 32, 4);
+                const capMaterial = new THREE.MeshStandardMaterial({
+                    color: 0xD4AF37,
+                    metalness: 0.95,
+                    roughness: 0.1,
+                    emissive: 0xB8941F,
+                });
+                const capTop = new THREE.Mesh(capTopGeometry, capMaterial);
+                capTop.castShadow = true;
+                capTop.receiveShadow = true;
+                capGroup.add(capTop);
+
+                // Cap center knob
+                const capCenterGeometry = new THREE.CylinderGeometry(0.28, 0.28, 0.15, 32, 8);
+                const capCenter = new THREE.Mesh(capCenterGeometry, capMaterial);
+                capCenter.position.y = 0.06;
+                capCenter.castShadow = true;
+                capCenter.receiveShadow = true;
+                capGroup.add(capCenter);
+
+                // Cap ridges (for grip texture) - adjusted for narrower cap
+                for (let i = 0; i < 18; i++) {
+                    const angle = (i / 18) * Math.PI * 2;
+                    const ridgeGeometry = new THREE.CylinderGeometry(0.018, 0.018, 0.10, 8, 2);
+                    const ridge = new THREE.Mesh(ridgeGeometry, capMaterial);
+                    ridge.position.x = Math.cos(angle) * 0.40;
+                    ridge.position.z = Math.sin(angle) * 0.40;
+                    ridge.castShadow = true;
+                    capGroup.add(ridge);
+                }
+
+                bottle.add(capGroup);
+
+                // === ENHANCED LABEL ===
+                const labelGeometry = new THREE.PlaneGeometry(1.5, 2.0);
+                const labelCanvas = document.createElement('canvas');
+                labelCanvas.width = 512;
+                labelCanvas.height = 640;
+                const ctx = labelCanvas.getContext('2d');
+                
+                // Create gradient background
+                const gradient = ctx.createLinearGradient(0, 0, 512, 640);
+                gradient.addColorStop(0, '#F9F6F0');
+                gradient.addColorStop(0.5, '#F5F1E8');
+                gradient.addColorStop(1, '#F0EAE0');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, 512, 640);
+
+                // Decorative border
+                ctx.strokeStyle = '#D4AF37';
+                ctx.lineWidth = 4;
+                ctx.strokeRect(20, 20, 472, 600);
+
+                // Inner decorative line
+                ctx.lineWidth = 2;
+                ctx.strokeRect(35, 35, 442, 570);
+                
+                // OmniBirra brand text - Main heading
+                ctx.fillStyle = '#1a472a';
+                ctx.font = 'bold italic 80px Arial Black';
+                ctx.textAlign = 'center';
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+                ctx.shadowBlur = 5;
+                ctx.shadowOffsetY = 3;
+                ctx.fillText('OMNI', 256, 110);
+                ctx.fillText('BIRRA', 256, 190);
+
+                // Decorative separator line with flourishes
+                ctx.strokeStyle = '#D4AF37';
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(80, 220);
+                ctx.lineTo(200, 220);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(312, 220);
+                ctx.lineTo(432, 220);
+                ctx.stroke();
+
+                // Center decorative element
+                ctx.fillStyle = '#D4AF37';
+                ctx.beginPath();
+                ctx.arc(256, 220, 18, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Tagline - more prominent in expanded space
+                ctx.fillStyle = '#6B4423';
+                ctx.font = 'italic 32px Georgia';
+                ctx.textAlign = 'center';
+                ctx.fillText('Artigianato Affidabile', 256, 280);
+
+                // Main description heading
+                ctx.fillStyle = '#1a472a';
+                ctx.font = 'bold 22px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('Eccellenza in Ogni Sorso', 256, 330);
+
+                // Features section - now with better spacing
+                ctx.fillStyle = '#1a472a';
+                ctx.font = '18px Arial';
+                ctx.textAlign = 'left';
+                ctx.fillText('✓ Ingredienti Biologici', 80, 390);
+                ctx.fillText('✓ Fermentazione Naturale', 80, 430);
+                ctx.fillText('✓ Qualità Garantita', 80, 470);
+
+                // Decorative bottom element
+                ctx.strokeStyle = '#D4AF37';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(80, 520);
+                ctx.lineTo(432, 520);
+                ctx.stroke();
+
+                // Bottom branding - moved down for expanded canvas
+                ctx.font = 'bold 24px Georgia';
+                ctx.textAlign = 'center';
+                ctx.fillStyle = '#D4AF37';
+                ctx.fillText('EST. 2025', 256, 580);
+
+                const labelTexture = new THREE.CanvasTexture(labelCanvas);
+                labelTexture.magFilter = THREE.LinearFilter;
+                labelTexture.minFilter = THREE.LinearMipmapLinearFilter;
+                
+                const labelMaterial = new THREE.MeshStandardMaterial({
+                    map: labelTexture,
+                    metalness: 0.05,
+                    roughness: 0.9,
+                    emissiveIntensity: 0.1,
+                });
+                const label = new THREE.Mesh(labelGeometry, labelMaterial);
+                label.position.z = 0.82;
+                label.castShadow = true;
+                label.receiveShadow = true;
+                bottle.add(label);
+
+                // Add glass-like shine/gloss overlay
+                const glossGeometry = new THREE.CylinderGeometry(0.8, 1.0, 4, 32, 32);
+                const glossMaterial = new THREE.MeshStandardMaterial({
+                    color: 0xffffff,
+                    metalness: 0.7,
+                    roughness: 0.1,
+                    transparent: true,
+                    opacity: 0.1,
+                    emissive: 0xffffff,
+                    emissiveIntensity: 0.05,
+                });
+                const gloss = new THREE.Mesh(glossGeometry, glossMaterial);
+                gloss.position.y = 0.5;
+                bottle.add(gloss);
+
+                bottleScene.add(bottle);
+                console.log('Bottle geometry created and added to scene');
+
+                // Mouse/Touch events
+                container.addEventListener('mousedown', onBottleMouseDown, false);
+                container.addEventListener('mousemove', onBottleMouseMove, false);
+                container.addEventListener('mouseup', onBottleMouseUp, false);
+                container.addEventListener('mouseleave', onBottleMouseUp, false);
+
+                container.addEventListener('touchstart', onBottleTouchStart, { passive: true });
+                container.addEventListener('touchmove', onBottleTouchMove, { passive: false });
+                container.addEventListener('touchend', onBottleTouchEnd, { passive: true });
+
+                console.log('Event listeners attached');
+
+                // Start animation
+                animateBottle();
+                console.log('Animation started');
+
+                // Handle resize
+                window.addEventListener('resize', onBottleWindowResize);
+
+                console.log('Bottle initialization complete!');
+            } catch (error) {
+                console.error('Error initializing bottle:', error);
+                console.error('Error stack:', error.stack);
+            }
+        }
+
+        function onBottleMouseDown(e) {
+            isDraggingBottle = true;
+            bottleDragStart = e.clientX;
+            bottleAutoRotate = false;
+        }
+
+        function onBottleMouseMove(e) {
+            if (!isDraggingBottle) return;
+            const deltaX = e.clientX - bottleDragStart;
+            bottleRotationY += deltaX * 0.01;
+            bottleDragStart = e.clientX;
+        }
+
+        function onBottleMouseUp() {
+            isDraggingBottle = false;
+            bottleAutoRotate = true;
+        }
+
+        function onBottleTouchStart(e) {
+            if (e.touches.length === 1) {
+                isDraggingBottle = true;
+                bottleDragStart = e.touches[0].clientX;
+                bottleAutoRotate = false;
+            }
+        }
+
+        function onBottleTouchMove(e) {
+            if (!isDraggingBottle || e.touches.length !== 1) return;
+            e.preventDefault();
+            const deltaX = e.touches[0].clientX - bottleDragStart;
+            bottleRotationY += deltaX * 0.01;
+            bottleDragStart = e.touches[0].clientX;
+        }
+
+        function onBottleTouchEnd() {
+            isDraggingBottle = false;
+            bottleAutoRotate = true;
+        }
+
+        function onBottleWindowResize() {
+            const container = document.getElementById('bottleContainer');
+            if (!container || !bottleRenderer) return;
+
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            
+            bottleCamera.aspect = width / height;
+            bottleCamera.updateProjectionMatrix();
+            bottleRenderer.setSize(width, height);
+        }
+
+        function animateBottle() {
+            requestAnimationFrame(animateBottle);
+
+            // Only animate if bottle exists
+            if (!bottle || !bottleRenderer) return;
+
+            if (bottleAutoRotate) {
+                bottleRotationY += bottleRotationVelocity;
+            }
+
+            // Main rotation around vertical axis
+            bottle.rotation.y = bottleRotationY;
+            
+            // Keep the 30-degree tilt on Z axis
+            bottle.rotation.z = Math.PI / 6; // 30 degrees
+            
+            // Subtle wobble on X axis
+            bottle.rotation.x = Math.sin(Date.now() * 0.0002) * 0.2;
+
+            bottleRenderer.render(bottleScene, bottleCamera);
+        }
+
+        // Initialize 3D bottle when page loads
+        window.addEventListener('load', () => {
+            console.log('Window load event fired');
+            console.log('THREE library available?', typeof THREE !== 'undefined');
+            if (typeof THREE === 'undefined') {
+                console.error('THREE.js library not loaded!');
+                return;
+            }
+            console.log('Initializing bottle...');
+            initBottle();
+        });
+
+        // Also initialize if not done yet
+        setTimeout(() => {
+            console.log('Timeout check - bottleRenderer exists?', !!bottleRenderer);
+            console.log('THREE library available?', typeof THREE !== 'undefined');
+            if (!bottleRenderer && typeof THREE !== 'undefined') {
+                console.log('Initializing bottle from timeout...');
+                initBottle();
+            } else if (typeof THREE === 'undefined') {
+                console.error('THREE.js still not available after timeout!');
+            }
+        }, 2000);
+
+        // Reinitialize on visibility change
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && !bottleRenderer) {
+                console.log('Reinitializing bottle on visibility change...');
+                initBottle();
+            }
+        });
+    </script>
+</body>
+</html>

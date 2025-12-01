@@ -45,6 +45,19 @@
             scrollbar-color: rgba(212, 175, 55, 0.5) transparent;
         }
 
+        /* Disable snap scrolling on mobile/tablet */
+        @media (max-width: 1024px) {
+            .scroll-container {
+                scroll-snap-type: none;
+            }
+            .slide {
+                scroll-snap-align: none;
+                scroll-snap-stop: unset;
+                height: auto;
+                min-height: auto;
+            }
+        }
+
         .scroll-container::-webkit-scrollbar {
             width: 10px;
         }
@@ -1306,6 +1319,7 @@
         // Detect mobile device and optimize performance
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         const isPortrait = window.innerHeight > window.innerWidth;
+        const isTablet = window.innerWidth <= 1024;
 
         // Add mobile class to body for CSS hooks
         if (isMobile) {
@@ -1318,6 +1332,17 @@
                     el.style.animationDuration = '0.1s';
                 });
             }
+        }
+
+        // Disable snap scrolling on mobile/tablet (keep animations)
+        if (isTablet) {
+            scrollContainer.style.scrollSnapType = 'none';
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.style.scrollSnapAlign = 'none';
+                slide.style.scrollSnapStop = 'unset';
+                slide.style.height = 'auto';
+                slide.style.minHeight = 'auto';
+            });
         }
 
         // Handle device orientation changes

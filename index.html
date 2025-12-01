@@ -52,27 +52,29 @@
             scrollbar-color: rgba(212, 175, 55, 0.5) transparent;
         }
 
-        /* Disable snap scrolling on mobile/tablet */
+        /* Mobile: convert to regular scrolling page */
         @media (max-width: 1024px) {
+            body {
+                overflow-y: auto !important;
+            }
+            
             .scroll-container {
-                scroll-snap-type: none !important;
-                overflow-y: visible !important;
                 height: auto !important;
-                position: relative !important;
-            }
-            .slide {
-                scroll-snap-align: none;
-                scroll-snap-stop: unset;
-                height: auto !important;
-                min-height: 0 !important;
-                max-height: none !important;
                 overflow: visible !important;
-                display: block !important;
+                scroll-snap-type: none !important;
+                scroll-behavior: auto !important;
             }
+            
+            .slide {
+                height: auto !important;
+                min-height: auto !important;
+                scroll-snap-align: none !important;
+                scroll-snap-stop: unset !important;
+                overflow: visible !important;
+            }
+            
             .slide-content {
                 height: auto !important;
-                min-height: 0 !important;
-                max-height: none !important;
                 overflow: visible !important;
             }
         }

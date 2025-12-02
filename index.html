@@ -1117,11 +1117,11 @@
             <div class="slide-content layout-title">
                 <h2 class="text-gold animate-fade-in-up stagger-1" style="margin-bottom: 2rem;">Scopri OmniBirra</h2>
                 <div class="video-container animate-fade-in-up stagger-2">
-                    <video id="prodVideo" playsinline preload="metadata">
+                    <video id="advertVideo" playsinline preload="metadata">
                         <source src="vid/omnibirra_advert.mp4" type="video/mp4">
                         Il tuo browser non supporta il tag video.
                     </video>
-                    <div class="video-play-overlay" id="prodVideoOverlay">
+                    <div class="video-play-overlay" id="advertVideoOverlay">
                         <div class="play-btn">
                             <i class="fas fa-play"></i>
                         </div>
@@ -1592,23 +1592,38 @@
             e.preventDefault();
         }, { passive: false });
 
-        // ==================== CUSTOM VIDEO PLAY BUTTON ====================
-        const prodVideo = document.getElementById('prodVideo');
-        const prodVideoOverlay = document.getElementById('prodVideoOverlay');
+        // ==================== CUSTOM VIDEO PLAY BUTTONS ====================
+        // Function to setup video with play overlay
+        function setupVideoPlayer(videoId, overlayId) {
+            const video = document.getElementById(videoId);
+            const overlay = document.getElementById(overlayId);
 
-        if (prodVideoOverlay && prodVideo) {
-            prodVideoOverlay.addEventListener('click', () => {
-                prodVideoOverlay.classList.add('hidden');
-                prodVideo.controls = true;
-                prodVideo.play();
-            });
+            if (overlay && video) {
+                overlay.addEventListener('click', () => {
+                    overlay.classList.add('hidden');
+                    video.controls = true;
+                    video.play();
+                });
 
-            // Show overlay again when video ends
-            prodVideo.addEventListener('ended', () => {
-                prodVideoOverlay.classList.remove('hidden');
-                prodVideo.controls = false;
-            });
+                // Show overlay again when video ends
+                video.addEventListener('ended', () => {
+                    overlay.classList.remove('hidden');
+                    video.controls = false;
+                });
+
+                // Also show overlay when video is paused and reset
+                video.addEventListener('pause', () => {
+                    if (video.currentTime === 0 || video.ended) {
+                        overlay.classList.remove('hidden');
+                        video.controls = false;
+                    }
+                });
+            }
         }
+
+        // Setup both video players
+        setupVideoPlayer('advertVideo', 'advertVideoOverlay');
+        setupVideoPlayer('prodVideo', 'prodVideoOverlay');
     </script>
 </body>
 </html>

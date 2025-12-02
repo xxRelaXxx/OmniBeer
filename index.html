@@ -165,63 +165,153 @@
         }
 
         .slide-2 {
-            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
-            color: #1a1f2e;
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+            color: white;
         }
 
         .slide-3 {
-            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
             color: #1a1f2e;
         }
 
         .slide-4 {
-            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
+            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
             color: #1a1f2e;
         }
 
         .slide-5 {
-            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
             color: #1a1f2e;
         }
 
         .slide-6 {
-            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
+            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
             color: #1a1f2e;
         }
 
         .slide-7 {
-            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
             color: #1a1f2e;
         }
 
         .slide-8 {
-            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
-            color: #1a1f2e;
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+            color: white;
         }
 
         .slide-9 {
-            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
+            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
             color: #1a1f2e;
         }
 
         .slide-10 {
-            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
-            color: #1a1f2e;
-        }
-
-        .slide-11 {
             background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
             color: #1a1f2e;
         }
 
-        .slide-12 {
+        .slide-11 {
             background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
             color: #1a1f2e;
         }
 
+        .slide-12 {
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
+            color: #1a1f2e;
+        }
+
         .slide-13 {
+            background: linear-gradient(135deg, #FFFBF7 0%, #F5F1E8 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-14 {
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFFBF7 100%);
+            color: #1a1f2e;
+        }
+
+        .slide-15 {
             background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #1a3a2e 100%);
             color: white;
+        }
+
+        /* Video Player Styles */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 175, 55, 0.2);
+            border: 3px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+            background: #000;
+        }
+
+        .video-container:hover {
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.6), 0 0 60px rgba(212, 175, 55, 0.3);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        /* Custom Play Button Overlay */
+        .video-play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-play-overlay:hover {
+            background: #111;
+        }
+
+        .video-play-overlay.hidden {
+            display: none;
+        }
+
+        .play-btn {
+            width: 100px;
+            height: 100px;
+            background: rgba(212, 175, 55, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .play-btn:hover {
+            background: #D4AF37;
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.4);
+        }
+
+        .play-btn i {
+            color: #1a472a;
+            font-size: 40px;
+            margin-left: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .play-btn {
+                width: 70px;
+                height: 70px;
+            }
+            .play-btn i {
+                font-size: 28px;
+                margin-left: 5px;
+            }
         }
 
         /* Legacy classes - can be removed */
@@ -1004,7 +1094,7 @@
 
     <div class="progress-bar" id="progressBar"></div>
     <div class="scroll-hint" id="scrollHint">↓ Scorri per continuare</div>
-    <div class="slide-counter"><span id="slideNumber">1</span> / 13</div>
+    <div class="slide-counter"><span id="slideNumber">1</span> / 15</div>
 
     <div class="scroll-container" id="scrollContainer">
         <!-- SLIDE 1: Titolo & Visione -->
@@ -1022,8 +1112,27 @@
             </div>
         </section>
 
-        <!-- SLIDE 2: Il Problema & L'Opportunità -->
+        <!-- SLIDE 2: Video Promozionale -->
         <section class="slide slide-2">
+            <div class="slide-content layout-title">
+                <h2 class="text-gold animate-fade-in-up stagger-1" style="margin-bottom: 2rem;">Scopri OmniBirra</h2>
+                <div class="video-container animate-fade-in-up stagger-2">
+                    <video id="prodVideo" playsinline preload="metadata">
+                        <source src="vid/omnibirra_advert.mp4" type="video/mp4">
+                        Il tuo browser non supporta il tag video.
+                    </video>
+                    <div class="video-play-overlay" id="prodVideoOverlay">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-white text-opacity-80 animate-fade-in-up stagger-3" style="margin-top: 1.5rem;">Guarda il nostro video promozionale</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: Il Problema & L'Opportunità -->
+        <section class="slide slide-3">
             <div class="slide-content">
                 <div class="layout-two-col">
                     <div class="content-col animate-fade-in-left">
@@ -1046,8 +1155,8 @@
             </div>
         </section>
 
-        <!-- SLIDE 3: La Proposta di Valore -->
-        <section class="slide slide-3">
+        <!-- SLIDE 4: La Proposta di Valore -->
+        <section class="slide slide-4">
             <div class="slide-content layout-title">
                 <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Cosa ci rende unici</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
@@ -1059,8 +1168,8 @@
             </div>
         </section>
 
-        <!-- SLIDE 4: Le Nostre Linee di Prodotto -->
-        <section class="slide slide-4">
+        <!-- SLIDE 5: Le Nostre Linee di Prodotto -->
+        <section class="slide slide-5">
             <div class="slide-content layout-title">
                 <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Portafoglio OmniBirra</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
@@ -1085,8 +1194,8 @@
             </div>
         </section>
 
-        <!-- SLIDE 5: Come Funziona il Metodo Unico -->
-        <section class="slide slide-5">
+        <!-- SLIDE 6: Come Funziona il Metodo Unico -->
+        <section class="slide slide-6">
             <div class="slide-content layout-title">
                 <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Metodo Unico Certificato</h2>
                 <p class="text-forest animate-fade-in-up stagger-2 mb-8">Estende il processo classico con tre passaggi proprietari</p>
@@ -1121,8 +1230,8 @@
             </div>
         </section>
 
-        <!-- SLIDE 6: Approvvigionamento & Qualità -->
-        <section class="slide slide-6">
+        <!-- SLIDE 7: Approvvigionamento & Qualità -->
+        <section class="slide slide-7">
             <div class="slide-content">
                 <div class="layout-two-col">
                     <div class="image-col animate-fade-in-left">
@@ -1140,8 +1249,27 @@
             </div>
         </section>
 
-        <!-- SLIDE 7: Strategia di Marketing -->
-        <section class="slide slide-7">
+        <!-- SLIDE 8: Video Produzione -->
+        <section class="slide slide-8">
+            <div class="slide-content layout-title">
+                <h2 class="text-gold animate-fade-in-up stagger-1" style="margin-bottom: 2rem;">Il Nostro Processo</h2>
+                <div class="video-container animate-fade-in-up stagger-2">
+                    <video id="prodVideo" playsinline preload="metadata">
+                        <source src="vid/omnibirra_prod.mp4" type="video/mp4">
+                        Il tuo browser non supporta il tag video.
+                    </video>
+                    <div class="video-play-overlay" id="prodVideoOverlay">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-white text-opacity-80 animate-fade-in-up stagger-3" style="margin-top: 1.5rem;">Guarda come produciamo le nostre birre</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: Strategia di Marketing -->
+        <section class="slide slide-9">
             <div class="slide-content layout-title">
                 <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Marketing & Community</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
@@ -1163,8 +1291,8 @@
             </div>
         </section>
 
-        <!-- SLIDE 8: Investire in OmniBirra -->
-        <section class="slide slide-8">
+        <!-- SLIDE 10: Investire in OmniBirra -->
+        <section class="slide slide-10">
             <div class="slide-content layout-title">
                 <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Investire in OmniBirra</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
@@ -1201,8 +1329,8 @@
             </div>
         </section>
 
-        <!-- SLIDE 9: Competenze Necessarie -->
-        <section class="slide slide-9">
+        <!-- SLIDE 11: Competenze Necessarie -->
+        <section class="slide slide-11">
             <div class="slide-content layout-title">
                 <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Competenze Chiave del Team</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
@@ -1240,8 +1368,8 @@
             </div>
         </section>
 
-        <!-- SLIDE 10: Risorse Necessarie -->
-        <section class="slide slide-10">
+        <!-- SLIDE 12: Risorse Necessarie -->
+        <section class="slide slide-12">
             <div class="slide-content layout-title">
                 <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Risorse e Infrastruttura</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
@@ -1272,8 +1400,8 @@
             </div>
         </section>
 
-        <!-- SLIDE 11: Roadmap di Crescita -->
-        <section class="slide slide-11">
+        <!-- SLIDE 13: Roadmap di Crescita -->
+        <section class="slide slide-13">
             <div class="slide-content layout-title">
                 <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Visione 0–5 Anni</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
@@ -1285,8 +1413,8 @@
             </div>
         </section>
 
-        <!-- SLIDE 12: Proiezioni Economiche -->
-        <section class="slide slide-12">
+        <!-- SLIDE 14: Proiezioni Economiche -->
+        <section class="slide slide-14">
             <div class="slide-content layout-title">
                 <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Numeri Chiave del Primo Anno</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
@@ -1302,8 +1430,8 @@
             </div>
         </section>
 
-        <!-- SLIDE 13: Chiusura -->
-        <section class="slide slide-13">
+        <!-- SLIDE 15: Chiusura -->
+        <section class="slide slide-15">
             <div class="slide-content layout-title">
                 <h1 class="text-gold animate-fade-in-up stagger-1">Grazie</h1>
                 <h2 class="text-gold animate-fade-in-up stagger-2" style="margin-top: 1rem;">Siamo Pronti a Costruire OmniBirra Insieme</h2>
@@ -1323,7 +1451,7 @@
         const progressBar = document.getElementById('progressBar');
         const slideNumber = document.getElementById('slideNumber');
         const scrollHint = document.getElementById('scrollHint');
-        const TOTAL_SLIDES = 13;
+        const TOTAL_SLIDES = 15;
         let currentSlide = 1;
         let hasScrolled = false;
 
@@ -1463,6 +1591,24 @@
         modalImage.addEventListener('wheel', (e) => {
             e.preventDefault();
         }, { passive: false });
+
+        // ==================== CUSTOM VIDEO PLAY BUTTON ====================
+        const prodVideo = document.getElementById('prodVideo');
+        const prodVideoOverlay = document.getElementById('prodVideoOverlay');
+
+        if (prodVideoOverlay && prodVideo) {
+            prodVideoOverlay.addEventListener('click', () => {
+                prodVideoOverlay.classList.add('hidden');
+                prodVideo.controls = true;
+                prodVideo.play();
+            });
+
+            // Show overlay again when video ends
+            prodVideo.addEventListener('ended', () => {
+                prodVideoOverlay.classList.remove('hidden');
+                prodVideo.controls = false;
+            });
+        }
     </script>
 </body>
 </html>

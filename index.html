@@ -249,6 +249,35 @@
             line-height: 1.3;
         }
 
+        /* Enhanced slide titles */
+        .slide-title {
+            font-size: clamp(1.75rem, 5vw, 2.75rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .slide-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #D4AF37, #1a472a);
+            border-radius: 2px;
+        }
+
+        .slide-title.text-left::after {
+            left: 0;
+            transform: none;
+        }
+
         h3 {
             font-size: clamp(1.25rem, 3vw, 1.75rem);
             font-weight: 600;
@@ -987,7 +1016,7 @@
             <div class="slide-content">
                 <div class="layout-two-col">
                     <div class="content-col animate-fade-in-left">
-                        <h2 class="text-forest mb-8">Perché OmniBirra?</h2>
+                        <h2 class="slide-title text-forest text-left mb-8">Perché OmniBirra?</h2>
                         <ul class="space-y-4">
                             <li class="animate-fade-in-up stagger-1">Il consumatore moderno cerca varietà, novità e sapori complessi.</li>
                             <li class="animate-fade-in-up stagger-2">Il mercato della birra artigianale cresce, ma l'innovazione aromatica è improvvisata e instabile.</li>
@@ -1009,7 +1038,7 @@
         <!-- SLIDE 3: La Proposta di Valore -->
         <section class="slide slide-3">
             <div class="slide-content layout-title">
-                <h2 class="text-forest animate-fade-in-up stagger-1">Cosa ci rende unici</h2>
+                <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Cosa ci rende unici</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
                     <p class="text-forest">Un brand interamente costruito sulla <strong>diversità dei gusti</strong> e sulla <strong>ripetibilità scientifica</strong>.</p>
                     <p class="text-forest mt-6">Il nostro punto di forza: <strong>Metodo Unico Certificato OmniBirra</strong>, che garantisce stabilità, purezza e intensità aromatica anche nelle miscele più complesse.</p>
@@ -1022,7 +1051,7 @@
         <!-- SLIDE 4: Le Nostre Linee di Prodotto -->
         <section class="slide slide-4">
             <div class="slide-content layout-title">
-                <h2 class="text-forest animate-fade-in-up stagger-1">Portafoglio OmniBirra</h2>
+                <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Portafoglio OmniBirra</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
                     <p class="text-forest"><strong>1. L'Essenziale</strong> – Chiara e Scura. Qualità fondamentale, volumi stabili.</p>
                     <p class="text-forest mt-4"><strong>2. Le Armonie</strong> – Gusti stabili: agrumi, frutti di bosco, botanici.</p>
@@ -1047,25 +1076,36 @@
 
         <!-- SLIDE 5: Come Funziona il Metodo Unico -->
         <section class="slide slide-5">
-            <div class="slide-content">
-                <div class="layout-two-col">
-                    <div class="content-col animate-fade-in-left">
-                        <h2 class="text-forest mb-8">Metodo Unico<br>Certificato OmniBirra</h2>
-                        <p class="text-forest font-semibold mb-6">Estende il processo classico con tre passaggi proprietari:</p>
-                        <ul class="space-y-4">
-                            <li class="animate-fade-in-up stagger-1"><strong>Infusioni a caldo</strong> – Spezie e radici, estrazione aromatica massima.</li>
-                            <li class="animate-fade-in-up stagger-2"><strong>Infusioni a freddo controllate</strong> – Frutta e puree, equilibrio con gli esteri della fermentazione.</li>
-                            <li class="animate-fade-in-up stagger-3"><strong>Miscelazione finale & micro-filtraggio</strong> – Controllo millimetrico degli aromi volatili.</li>
-                        </ul>
-                        <p class="text-forest font-semibold mt-8 pt-6 border-t-2 border-gold">Il processo integra attività standard (maltazione, ammostamento, bollitura, fermentazione) con tre fasi proprietarie di aromatizzazione, seguite da micro-filtrazione, maturazione, imbottigliamento e test di qualità per ogni lotto.</p>
-                        <p class="text-forest font-bold mt-4">Garantiamo: stabilità, sicurezza, ripetibilità.</p>
+            <div class="slide-content layout-title">
+                <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Metodo Unico Certificato</h2>
+                <p class="text-forest animate-fade-in-up stagger-2 mb-8">Estende il processo classico con tre passaggi proprietari</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8 animate-fade-in-up stagger-2">
+                    <div class="p-6 rounded-xl text-center" style="background: rgba(26, 71, 42, 0.08); border: 2px solid rgba(212, 175, 55, 0.3);">
+                        <span class="text-4xl mb-4 block">🔥</span>
+                        <p class="text-forest font-bold mb-2">Infusioni a Caldo</p>
+                        <p class="text-forest text-sm opacity-80">Spezie e radici per estrazione aromatica massima</p>
                     </div>
-                    <div class="image-col animate-fade-in-right">
-                        <div class="flex flex-col gap-6">
-                            <img src="img/slide5/metodo-unico-3step.png" alt="3 Step" class="slide-image" style="max-height: 280px;">
-                            <img src="img/slide5/metodo-unico-tecnical.png" alt="Technical" class="slide-image" style="max-height: 280px;">
-                        </div>
+                    <div class="p-6 rounded-xl text-center" style="background: rgba(26, 71, 42, 0.08); border: 2px solid rgba(212, 175, 55, 0.3);">
+                        <span class="text-4xl mb-4 block">❄️</span>
+                        <p class="text-forest font-bold mb-2">Infusioni a Freddo</p>
+                        <p class="text-forest text-sm opacity-80">Frutta e puree in equilibrio con gli esteri</p>
                     </div>
+                    <div class="p-6 rounded-xl text-center" style="background: rgba(26, 71, 42, 0.08); border: 2px solid rgba(212, 175, 55, 0.3);">
+                        <span class="text-4xl mb-4 block">🔬</span>
+                        <p class="text-forest font-bold mb-2">Micro-filtraggio</p>
+                        <p class="text-forest text-sm opacity-80">Controllo millimetrico degli aromi volatili</p>
+                    </div>
+                </div>
+
+                <div class="max-w-4xl mx-auto p-6 rounded-xl animate-fade-in-up stagger-3" style="background: rgba(212, 175, 55, 0.08); border-top: 3px solid #D4AF37;">
+                    <p class="text-forest text-sm mb-2">Il processo integra attività standard (maltazione, ammostamento, bollitura, fermentazione) con tre fasi proprietarie di aromatizzazione, seguite da micro-filtrazione, maturazione, imbottigliamento e test di qualità.</p>
+                    <p class="text-forest font-bold">✓ Stabilità &nbsp;&nbsp; ✓ Sicurezza &nbsp;&nbsp; ✓ Ripetibilità</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6 mt-8 animate-fade-in-up stagger-4">
+                    <img src="img/slide5/metodo-unico-3step.png" alt="3 Step" class="slide-image" style="max-height: 240px;">
+                    <img src="img/slide5/metodo-unico-tecnical.png" alt="Technical" class="slide-image" style="max-height: 240px;">
                 </div>
             </div>
         </section>
@@ -1078,7 +1118,7 @@
                         <img src="img/slide6/approvvigionamento-organico.png" alt="Approvvigionamento Organico" class="slide-image" style="max-height: 400px;">
                     </div>
                     <div class="content-col animate-fade-in-right">
-                        <h2 class="text-forest mb-8">Approvvigionamento<br>Organico Controllato</h2>
+                        <h2 class="slide-title text-forest text-left mb-8">Approvvigionamento<br>Organico Controllato</h2>
                         <ul class="space-y-4">
                             <li class="animate-fade-in-up stagger-1">Ingredienti selezionati in base alla loro termostabilità e certificazioni UE.</li>
                             <li class="animate-fade-in-up stagger-2">Contratti con fornitori premium.</li>
@@ -1092,7 +1132,7 @@
         <!-- SLIDE 7: Strategia di Marketing -->
         <section class="slide slide-7">
             <div class="slide-content layout-title">
-                <h2 class="text-forest animate-fade-in-up stagger-1">Marketing & Community</h2>
+                <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Marketing & Community</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
                     <p class="text-forest font-semibold mb-6"><strong>Clienti Principali:</strong></p>
                     <ul class="space-y-2 inline-block text-left mb-8">
@@ -1115,20 +1155,38 @@
         <!-- SLIDE 8 BIS: Competenze Necessarie -->
         <section class="slide slide-8">
             <div class="slide-content layout-title">
-                <h2 class="text-forest animate-fade-in-up stagger-1">Competenze Chiave del Team</h2>
+                <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Competenze Chiave del Team</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
-                    <ul class="space-y-4 inline-block text-left">
-                        <li class="animate-fade-in-up stagger-1"><strong>Mastro birraio certificato</strong> con esperienza in aromatizzazioni multi-fase.</li>
-                        <li class="animate-fade-in-up stagger-2"><strong>Tecnologo alimentare</strong> per certificazioni, micro-filtrazione e stabilità gusto.</li>
-                        <li class="animate-fade-in-up stagger-3"><strong>Team marketing</strong> orientato ai social e alla community.</li>
-                        <li class="animate-fade-in-up stagger-4"><strong>Competenze tecniche</strong> in gestione impianti, produzione e controllo qualità.</li>
-                    </ul>
-                </div>
-                <div class="text-4xl space-x-8 flex justify-center mt-8 animate-fade-in-up stagger-3">
-                    <span class="text-gold">⚙️</span>
-                    <span class="text-gold">✓</span>
-                    <span class="text-gold">🧪</span>
-                    <span class="text-gold">📢</span>
+                    <div class="grid gap-6" style="text-align: left;">
+                        <div class="flex items-start gap-4 p-4 rounded-lg" style="background: rgba(26, 71, 42, 0.05);">
+                            <span class="text-2xl">⚙️</span>
+                            <div>
+                                <p class="text-forest font-bold mb-1">Mastro birraio certificato</p>
+                                <p class="text-forest text-sm opacity-80">Con esperienza in aromatizzazioni multi-fase</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-lg" style="background: rgba(26, 71, 42, 0.05);">
+                            <span class="text-2xl">🧪</span>
+                            <div>
+                                <p class="text-forest font-bold mb-1">Tecnologo alimentare</p>
+                                <p class="text-forest text-sm opacity-80">Per certificazioni, micro-filtrazione e stabilità gusto</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-lg" style="background: rgba(26, 71, 42, 0.05);">
+                            <span class="text-2xl">📢</span>
+                            <div>
+                                <p class="text-forest font-bold mb-1">Team marketing</p>
+                                <p class="text-forest text-sm opacity-80">Orientato ai social e alla community</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-lg" style="background: rgba(26, 71, 42, 0.05);">
+                            <span class="text-2xl">✓</span>
+                            <div>
+                                <p class="text-forest font-bold mb-1">Competenze tecniche</p>
+                                <p class="text-forest text-sm opacity-80">In gestione impianti, produzione e controllo qualità</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1136,21 +1194,45 @@
         <!-- SLIDE 8 TER: Risorse Necessarie -->
         <section class="slide slide-9">
             <div class="slide-content layout-title">
-                <h2 class="text-forest animate-fade-in-up stagger-1">Risorse e Infrastruttura</h2>
+                <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Risorse e Infrastruttura</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
-                    <ul class="space-y-4 inline-block text-left">
-                        <li class="animate-fade-in-up stagger-1"><strong>Risorse economiche:</strong> investimento iniziale €180.000.</li>
-                        <li class="animate-fade-in-up stagger-2"><strong>Persone:</strong> 4 ruoli chiave (Mastro birraio, assistente, sales/marketing, founder).</li>
-                        <li class="animate-fade-in-up stagger-3"><strong>Attrezzature:</strong> brewhouse, fermentatori, linea semi-automatica, sistema micro-filtraggio.</li>
-                        <li class="animate-fade-in-up stagger-4"><strong>Materie prime:</strong> malti selezionati, frutta certificata, aromi botanici premium.</li>
-                        <li class="animate-fade-in-up stagger-5"><strong>Spazio:</strong> struttura da 200–300 mq.</li>
-                    </ul>
-                </div>
-                <div class="text-4xl space-x-8 flex justify-center mt-8 animate-fade-in-up stagger-3">
-                    <span class="text-gold">💰</span>
-                    <span class="text-gold">👥</span>
-                    <span class="text-gold">🏭</span>
-                    <span class="text-gold">🌾</span>
+                    <div class="grid gap-5" style="text-align: left;">
+                        <div class="flex items-start gap-4 p-4 rounded-lg" style="background: rgba(26, 71, 42, 0.05);">
+                            <span class="text-2xl">💰</span>
+                            <div>
+                                <p class="text-forest font-bold mb-1">Risorse economiche</p>
+                                <p class="text-forest text-sm opacity-80">Investimento iniziale €180.000</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-lg" style="background: rgba(26, 71, 42, 0.05);">
+                            <span class="text-2xl">👥</span>
+                            <div>
+                                <p class="text-forest font-bold mb-1">Persone</p>
+                                <p class="text-forest text-sm opacity-80">4 ruoli chiave: Mastro birraio, assistente, sales/marketing, founder</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-lg" style="background: rgba(26, 71, 42, 0.05);">
+                            <span class="text-2xl">🏭</span>
+                            <div>
+                                <p class="text-forest font-bold mb-1">Attrezzature</p>
+                                <p class="text-forest text-sm opacity-80">Brewhouse, fermentatori, sistema micro-filtraggio, linea semi-automatica di imbottigliamento </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-lg" style="background: rgba(26, 71, 42, 0.05);">
+                            <span class="text-2xl">🌾</span>
+                            <div>
+                                <p class="text-forest font-bold mb-1">Materie prime</p>
+                                <p class="text-forest text-sm opacity-80">Malti selezionati, frutta certificata, aromi botanici premium</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-lg" style="background: rgba(26, 71, 42, 0.05);">
+                            <span class="text-2xl">🏢</span>
+                            <div>
+                                <p class="text-forest font-bold mb-1">Spazio</p>
+                                <p class="text-forest text-sm opacity-80">Struttura da 200–300 mq</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1158,7 +1240,7 @@
         <!-- SLIDE 9: Roadmap di Crescita -->
         <section class="slide slide-9-old">
             <div class="slide-content layout-title">
-                <h2 class="text-forest animate-fade-in-up stagger-1">Visione 0–5 Anni</h2>
+                <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Visione 0–5 Anni</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
                     <p class="text-forest"><strong>0–12 mesi:</strong> Produzione iniziale, certificazione UE, vendite locali.</p>
                     <p class="text-forest mt-4"><strong>1–3 anni:</strong> Espansione nazionale, crescita della serie Capricci.</p>
@@ -1171,7 +1253,7 @@
         <!-- SLIDE 10: Proiezioni Economiche -->
         <section class="slide slide-10-old">
             <div class="slide-content layout-title">
-                <h2 class="text-forest animate-fade-in-up stagger-1">Numeri Chiave del Primo Anno</h2>
+                <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Numeri Chiave del Primo Anno</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
                     <ul class="space-y-3 inline-block text-left text-forest font-semibold">
                         <li>Capacità: <strong>800 hL / 80.000 L</strong></li>
@@ -1188,20 +1270,38 @@
         <!-- SLIDE 11: Richiesta di Investimento -->
         <section class="slide slide-11-old">
             <div class="slide-content layout-title">
-                <h2 class="text-forest animate-fade-in-up stagger-1">Investire in OmniBirra</h2>
+                <h2 class="slide-title text-forest animate-fade-in-up stagger-1">Investire in OmniBirra</h2>
                 <div class="max-w-4xl mx-auto my-8 animate-fade-in-up stagger-2">
-                    <p class="text-forest"><strong>Richiesta di capitale: €180.000</strong> per coprire il CAPEX iniziale e il capitale circolante.</p>
-                    <p class="text-forest mt-6">Modello ad alto margine e rischio di produzione ridotto grazie alla certificazione UE.</p>
-                    <p class="text-forest font-semibold mt-8 pt-6 border-t-2 border-gold"><strong>Struttura snella:</strong></p>
-                    <ul class="space-y-2 inline-block text-left mt-4">
-                        <li>CEO/Founder – gestione operativa e strategica</li>
-                        <li>Mastro Birraio – produzione e R&S</li>
-                        <li>Assistente di Produzione – logistica e impianto</li>
-                        <li>Sales/Marketing – community, vendite e B2B</li>
-                    </ul>
-                    <p class="text-forest font-semibold mt-6">Struttura pensata per scalare rapidamente con l'aumento dei volumi.</p>
+                    <div class="text-center mb-8 p-6 rounded-xl" style="background: rgba(212, 175, 55, 0.1); border: 2px solid #D4AF37;">
+                        <p class="text-forest text-xl font-bold">Richiesta di capitale: €180.000</p>
+                        <p class="text-forest mt-2 opacity-80">Per coprire il CAPEX iniziale e il capitale circolante</p>
+                    </div>
+                    <p class="text-forest text-center mb-8">Modello ad alto margine e rischio di produzione ridotto grazie alla certificazione UE.</p>
+                    
+                    <div class="pt-6 border-t-2 border-gold">
+                        <p class="text-forest font-bold text-lg text-center mb-6">Struttura Organizzativa Snella</p>
+                        <div class="grid grid-cols-2 gap-4" style="max-width: 600px; margin: 0 auto;">
+                            <div class="p-4 rounded-lg text-center" style="background: rgba(26, 71, 42, 0.05);">
+                                <p class="text-forest font-bold">CEO/Founder</p>
+                                <p class="text-forest text-sm opacity-70">Gestione operativa e strategica</p>
+                            </div>
+                            <div class="p-4 rounded-lg text-center" style="background: rgba(26, 71, 42, 0.05);">
+                                <p class="text-forest font-bold">Mastro Birraio</p>
+                                <p class="text-forest text-sm opacity-70">Produzione e R&S</p>
+                            </div>
+                            <div class="p-4 rounded-lg text-center" style="background: rgba(26, 71, 42, 0.05);">
+                                <p class="text-forest font-bold">Assistente Produzione</p>
+                                <p class="text-forest text-sm opacity-70">Logistica e impianto</p>
+                            </div>
+                            <div class="p-4 rounded-lg text-center" style="background: rgba(26, 71, 42, 0.05);">
+                                <p class="text-forest font-bold">Sales/Marketing</p>
+                                <p class="text-forest text-sm opacity-70">Community, vendite e B2B</p>
+                            </div>
+                        </div>
+                        <p class="text-forest font-semibold text-center mt-6">Struttura pensata per scalare rapidamente con l'aumento dei volumi.</p>
+                    </div>
                 </div>
-                <img src="img/slide10/richiesta-capitale.png" alt="Richiesta Capitale" class="animate-fade-in-up stagger-3 slide-image" style="max-height: 300px;">
+                <img src="img/slide10/richiesta-capitale.png" alt="Richiesta Capitale" class="animate-fade-in-up stagger-3 slide-image" style="max-height: 280px;">
             </div>
         </section>
 
